@@ -21,7 +21,6 @@ This project is part of the 2023 kir-dev spring-boot course live coding action.
  - Kotlin basics
    - data class
    - variable declaration
-   - 
 
 ## How to start
 

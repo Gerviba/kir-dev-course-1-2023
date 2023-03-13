@@ -163,7 +163,7 @@
 </head>
 <body>
 <header>
-    <h1 th:text="${appName}">Website Header</h1>
+    <h1 th:text="${appName ?: 'Attribute `appName` is not set'}">Website Header</h1>
     <nav>
         <ul>
             <li><a href="/">Index</a></li>
@@ -178,7 +178,7 @@
     <section>
         <h2>Previous messages</h2>
 
-        <div class="message" th:each="msg : ${messages}">
+        <div th:if="${messages != null}" class="message" th:each="msg : ${messages}">
             <h2 th:text="${msg.getName()}">Another Message Title</h2>
             <p th:text="${msg.getMessage()}">Another message content goes here.</p>
             <p class="date" th:text="${#dates.format(new java.util.Date(msg.getTimestamp()), 'yyyy MMMM dd hh:mm a')}"></p>
